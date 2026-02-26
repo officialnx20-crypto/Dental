@@ -1,34 +1,34 @@
 import { Switch, Route } from "wouter";
-import { queryClient } from "./lib/queryClient";
+import { queryClient } from "./queryClient";
 import { QueryClientProvider } from "@tanstack/react-query";
-import { Toaster } from "@/components/ui/toaster";
-import { TooltipProvider } from "@/components/ui/tooltip";
-import { LanguageProvider } from "@/lib/LanguageContext";
-import { useSettings } from "@/hooks/use-settings";
+import { Toaster } from "@/toaster";
+import { TooltipProvider } from "@/tooltip";
+import { LanguageProvider } from "@/LanguageContext";
+import { useSettings } from "@/use-settings";
 
 // Components
-import { Navbar } from "@/components/Navbar";
-import { Footer } from "@/components/Footer";
-import { FloatingActions } from "@/components/FloatingActions";
-import { MaintenanceScreen } from "@/components/MaintenanceScreen";
-import NotFound from "@/pages/not-found";
+import { Navbar } from "@/Navbar";
+import { Footer } from "@/Footer";
+import { FloatingActions } from "@/FloatingActions";
+import { MaintenanceScreen } from "@/MaintenanceScreen";
+import NotFound from "@/not-found";
 
 // Public Pages
-import Home from "@/pages/Home";
-import Services from "@/pages/Services";
-import Doctors from "@/pages/Doctors";
-import Gallery from "@/pages/Gallery";
-import Contact from "@/pages/Contact";
-import BookAppointment from "@/pages/BookAppointment";
+import Home from "@/Home";
+import Services from "@/Services";
+import Doctors from "@/Doctors";
+import Gallery from "@/Gallery";
+import Contact from "@/Contact";
+import BookAppointment from "@/BookAppointment";
 
 // Admin Pages
-import AdminLogin from "@/pages/admin/Login";
-import AdminDashboard from "@/pages/admin/Dashboard";
-import AdminAppointments from "@/pages/admin/Appointments";
-import AdminServices from "@/pages/admin/Services";
-import AdminDoctors from "@/pages/admin/Doctors";
-import AdminGallery from "@/pages/admin/Gallery";
-import AdminSettings from "@/pages/admin/Settings";
+import AdminLogin from "@/Login";
+import AdminDashboard from "@/Dashboard";
+import AdminAppointments from "@/Appointments";
+import AdminServices from "@/Servicess";
+import AdminDoctors from "@/Doctorss";
+import AdminGallery from "@/Gallerys";
+import AdminSettings from "@/Settings";
 
 // Wrapper for public routes to check maintenance mode
 function PublicLayout({ children }: { children: React.ReactNode }) {
