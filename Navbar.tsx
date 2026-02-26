@@ -1,8 +1,8 @@
 import { Link, useLocation } from "wouter";
-import { useLanguage } from "@/lib/LanguageContext";
+import { useLanguage } from "@/LanguageContext";
 import { Phone, MapPin, Menu, X } from "lucide-react";
-import { useSettings } from "@/hooks/use-settings";
-import { Button } from "./ui/button";
+import { useSettings } from "@/use-settings";
+import { Button } from "./button";
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
