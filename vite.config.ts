@@ -7,40 +7,27 @@ export default defineConfig({
   plugins: [
     react(),
     runtimeErrorOverlay(),
-    ...(process.env.NODE_ENV !== "production" &&
-    process.env.REPL_ID !== undefined
-      ? [
-          await import("@replit/vite-plugin-cartographer").then((m) =>
-            m.cartographer(),
-          ),
-          await import("@replit/vite-plugin-dev-banner").then((m) =>
-            m.devBanner(),
-          ),
-        ]
-      : []),
   ],
+
   resolve: {
     alias: {
-      "@": path.resolve(import.meta.dirname, "client", "src"),
-      "@shared": path.resolve(import.meta.dirname, "shared"),
-      "@assets": path.resolve(import.meta.dirname, "attached_assets"),
-      "@hero-dentist.jpg": path.resolve(import.meta.dirname, "hero-dentist.jpg"),
-      "/assets/women-dentist-hero.jpg": path.resolve(import.meta.dirname, "hero-dentist.jpg"),
+      "@": path.resolve(__dirname, "."),
+      "@shared": path.resolve(__dirname, "shared"),
+      "@assets": path.resolve(__dirname, "attached_assets"),
     },
   },
-  root: path.resolve(import.meta.dirname, "client"),
+
+  // IMPORTANT: root ko client se hata diya (ab root = project root)
+  // isse Vite directly index.html (root wala) use karega
+
   build: {
-    outDir: path.resolve(import.meta.dirname, "dist/public"),
+    outDir: "dist",
     emptyOutDir: true,
   },
+
   server: {
-    allowedHosts: true,
     host: "0.0.0.0",
     port: 5000,
     strictPort: true,
-    fs: {
-      strict: true,
-      deny: ["**/.*"],
-    },
   },
 });
