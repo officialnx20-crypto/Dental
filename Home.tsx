@@ -1,15 +1,15 @@
 import { Link } from "wouter";
 import { motion } from "framer-motion";
 import { ArrowRight, Star, Shield, Clock, CheckCircle2, Phone } from "lucide-react";
-import { Button } from "@/components/ui/button";
-import { useLanguage } from "@/lib/LanguageContext";
-import { useServices } from "@/hooks/use-services";
-import { useDoctors } from "@/hooks/use-doctors";
-import { useSettings } from "@/hooks/use-settings";
+import { Button } from "@/button";
+import { useLanguage } from "@/LanguageContext";
+import { useServices } from "@/use-services";
+import { useDoctors } from "@/use-doctors";
+import { useSettings } from "@/use-settings";
 
 // Hero Doctor Image (assets me honi chahiye)
-import heroDentist from "/assets/doctor.jpg";
-import medicineImg from "/assets/shop.jpg";
+import heroDentist from "/doctor.jpg";
+import medicineImg from "/shop.jpg";
 
 export default function Home() {
   const { t } = useLanguage();
